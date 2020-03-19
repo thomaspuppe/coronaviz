@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ title }}</title>
+		<link href="/assets/styles.css" rel="stylesheet" />
+	</head>
+	<body>
+        <div class="logo">CoronaViz.io</div>
+        <div class="social"></div>
+        <nav class="nav">
+        	<ol>
+        		{%- for tag in ALL_TAGS %}
+        			<li><a href="/{{ tag }}/">{{ tag }}</a></li>
+        		{%- endfor %}
+        	</ol>
+        </nav>
+        <main class="main">
+            <h1>{{ title }}</h1>
+            {% block content %}{% endblock content %}
+        </main>
+		<footer class="footer">Made by <a href="https://www.thomaspuppe.de">Thomas Puppe</a>. Available on <a href="https://www.github.com/thomaspuppe">GitHub</a>.</footer>
+	</body>
+</html>
+
+
+

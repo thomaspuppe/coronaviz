@@ -1,0 +1,20 @@
+{
+  "name": "coronaviz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all --parallel sass sites",
+    "sass": "sass src/sass/index.sass dist/assets/styles.css",
+    "sites": "node src/index.js --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.2.1",
+    "sass": "^1.26.3"
+  }
+}

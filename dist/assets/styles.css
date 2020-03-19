@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  background-color: #FEFEFE;
+  color: #252525;
+  font-size: 20px;
+  height: 100%;
+  margin: 0;
+}
+@media (min-width: 50em) {
+  body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px 1fr 30px;
+    grid-template-areas: "logo social" "nav main" "nav footer";
+  }
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.social {
+  grid-area: social;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*# sourceMappingURL=styles.css.map */
