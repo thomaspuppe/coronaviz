@@ -30,10 +30,25 @@ LOG(ALL_ITEMS)
 LOG(ALL_TAGS)
 
 nunjucks.configure('src/templates')
-var res = nunjucks.render('index.njk', { 
-    ALL_TAGS,
+
+const indexHtml = nunjucks.render('index.njk', { 
+    ALL_TAGS: Array.from(ALL_TAGS).sort(),
     ALL_ITEMS
 });
-fs.writeFileSync('dist/index.html', res)
+fs.writeFileSync('dist/index.html', indexHtml)
+
+
+ALL_TAGS.forEach( tag => {
+    const tagHtml = nunjucks.render('index.njk', { 
+        ALL_TAGS: Array.from(ALL_TAGS).sort(),
+        ALL_ITEMS
+    });
+    try {
+        fs.mkdirSync(`dist/${ tag.toLowerCase() }`)
+    } catch(e) {
+        LOG('Cannot create directory ', e);
+    }
+    fs.writeFileSync(`dist/${ tag.toLowerCase() }/index.html`, tagHtml)
+})
 
 console.timeEnd('🚀 Build')

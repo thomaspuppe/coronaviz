@@ -11,7 +11,7 @@
         <nav class="nav">
         	<ol>
         		{%- for tag in ALL_TAGS %}
-        			<li><a href="/{{ tag }}/">{{ tag }}</a></li>
+        			<li><a href="/{{ tag | lower }}/">{{ tag }}</a></li>
         		{%- endfor %}
         	</ol>
         </nav>
