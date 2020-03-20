@@ -1,6 +1,7 @@
 console.time('🚀 Build')
 
 const fs = require('fs')
+const ncp = require('ncp').ncp
 const nunjucks = require('nunjucks')
 
 const VERBOSE = false
@@ -50,6 +51,11 @@ ALL_TAGS.forEach( tag => {
         LOG('Cannot create directory ', e);
     }
     fs.writeFileSync(`dist/${ tag.toLowerCase() }/index.html`, tagHtml)
+})
+
+ncp(`src/static`, `dist`, err => {
+  if (err) return console.error(err)
+  LOG('copied static assets')
 })
 
 console.timeEnd('🚀 Build')
