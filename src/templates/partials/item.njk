@@ -1,1 +1,9 @@
-item.njk
+<article>
+	<a href="{{ item.url }}">
+		{% if item.image %}
+			<img src="{{ item.image }}" alt="{{ item.title }}"/>
+		{% endif %}
+		<h3>{{ item.title }}</h3>
+		<p>{{ item.description }}</p>
+	</a>
+</article>

@@ -8,13 +8,14 @@
 	<body>
         <div class="logo">
             {% include 'partials/logo.njk' %}
-        CoronaViz.io</div>
+            CoronaViz.org
+        </div>
         <div class="social"></div>
         <nav class="nav">
         	<ol>
-                <li><a href="/" class="active">All</a></li>
+                <li><a href="/" {{ 'class=active' if not CURRENT_TAG }}>All</a></li>
         		{%- for tag in ALL_TAGS %}
-        			<li><a href="/{{ tag | lower }}/">{{ tag }}</a></li>
+        			<li><a href="/{{ tag | lower }}/" {{ 'class=active' if CURRENT_TAG == tag }}>{{ tag }}</a></li>
         		{%- endfor %}
         	</ol>
         </nav>

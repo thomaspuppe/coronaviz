@@ -26,22 +26,23 @@ ALL_ITEMS.forEach( item => {
     })
 })
 
-LOG(ALL_ITEMS)
-LOG(ALL_TAGS)
-
 nunjucks.configure('src/templates')
 
 const indexHtml = nunjucks.render('index.njk', { 
-    ALL_TAGS: Array.from(ALL_TAGS).sort(),
+    'ALL_TAGS': Array.from(ALL_TAGS).sort(),
     ALL_ITEMS
 });
 fs.writeFileSync('dist/index.html', indexHtml)
 
 
 ALL_TAGS.forEach( tag => {
+    const TAGGED_ITEMS = ALL_ITEMS.filter(item => {
+        return item.tags.indexOf(tag) > -1
+    })
     const tagHtml = nunjucks.render('index.njk', { 
-        ALL_TAGS: Array.from(ALL_TAGS).sort(),
-        ALL_ITEMS
+        'ALL_TAGS': Array.from(ALL_TAGS).sort(),
+        'ALL_ITEMS': TAGGED_ITEMS,
+        'CURRENT_TAG': tag
     });
     try {
         fs.mkdirSync(`dist/${ tag.toLowerCase() }`)
