@@ -6,10 +6,13 @@
 		<link href="/assets/styles.css" rel="stylesheet" />
 	</head>
 	<body>
-        <div class="logo">CoronaViz.io</div>
+        <div class="logo">
+            {% include 'partials/logo.njk' %}
+        CoronaViz.io</div>
         <div class="social"></div>
         <nav class="nav">
         	<ol>
+                <li><a href="/" class="active">All</a></li>
         		{%- for tag in ALL_TAGS %}
         			<li><a href="/{{ tag | lower }}/">{{ tag }}</a></li>
         		{%- endfor %}
@@ -19,9 +22,9 @@
             <h1>{{ title }}</h1>
             {% block content %}{% endblock content %}
         </main>
-		<footer class="footer">Made by <a href="https://www.thomaspuppe.de">Thomas Puppe</a>. Available on <a href="https://www.github.com/thomaspuppe">GitHub</a>.</footer>
+		<footer class="footer">
+            Made by <a href="https://www.thomaspuppe.de">Thomas Puppe</a>. Available on <a href="https://www.github.com/thomaspuppe">GitHub</a>.
+            <!-- TODO: Icon attribution (https://www.svgrepo.com/svg/71597/virus) -->
+        </footer>
 	</body>
 </html>
-
-
-

@@ -1,0 +1,9 @@
+.content
+	display: grid
+	grid-gap: 20px
+	@media (min-width: 50em)
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+
+	article
+		border: 1px $color-stroke solid
+		padding: 10px

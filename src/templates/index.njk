@@ -3,13 +3,13 @@
 {% set title = 'CoronaViz: A directory of COVID-19 data visualization' %}
 
 {% block content %}
-<ul>
-	{%- for item in ALL_ITEMS %}
-		<article>
-			<h3>{{ item.title }}</h3>
-			<p>{{ item.description }}</p>
-			<a href="{{ item.url }}">{{ item.url }}</a>
-		</article>
-	{%- endfor %}
-</ul>
+<div class="content">
+{%- for item in ALL_ITEMS %}
+	<article>
+		<h3>{{ item.title }}</h3>
+		<p>{{ item.description }}</p>
+		<a href="{{ item.url }}">{{ item.url }}</a>
+	</article>
+{%- endfor %}
+</div>
 {% endblock content %}

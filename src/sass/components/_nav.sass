@@ -1,0 +1,20 @@
+.nav
+	background-color: $color-secondary
+	color: $color-paragraph
+
+
+	ol
+		list-style: none
+		padding-left: 1ch
+	li a
+		color: $color-paragraph
+		display: block
+		margin: 0.2em 1ch
+		padding: 0.2em 0.5ch
+		text-decoration: none
+		&:hover
+			color: $color-stroke
+			text-decoration: underline
+		&.active
+			background-color: $color-main
+			color: $color-stroke

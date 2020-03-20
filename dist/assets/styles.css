@@ -1,3 +1,4 @@
+/* https://www.happyhues.co/palettes/14 */
 html {
   box-sizing: border-box;
   height: 100%;
@@ -6,6 +7,7 @@ html {
 body {
   background-color: #FEFEFE;
   color: #252525;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 20px;
   height: 100%;
   margin: 0;
@@ -29,10 +31,60 @@ body {
 
 .main {
   grid-area: main;
+  padding: 0 30px;
 }
 
 .footer {
   grid-area: footer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.logo svg {
+  height: 80px;
+  margin: 2ch;
+  width: 80px;
+}
+
+.nav {
+  background-color: #e3f6f5;
+  color: #2d334a;
+}
+.nav ol {
+  list-style: none;
+  padding-left: 1ch;
+}
+.nav li a {
+  color: #2d334a;
+  display: block;
+  margin: 0.2em 1ch;
+  padding: 0.2em 0.5ch;
+  text-decoration: none;
+}
+.nav li a:hover {
+  color: #272343;
+  text-decoration: underline;
+}
+.nav li a.active {
+  background-color: #fffffe;
+  color: #272343;
+}
+
+.content {
+  display: grid;
+  grid-gap: 20px;
+}
+@media (min-width: 50em) {
+  .content {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+.content article {
+  border: 1px #272343 solid;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
