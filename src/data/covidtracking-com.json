@@ -1,0 +1,7 @@
+{
+	"title": "The COVID Tracking Project (USA)",
+	"description": "Collects information from US states, to provide the most comprehensive testing data including positive and negative results, pending tests, and total people tested.",
+	"url": "https://covidtracking.com/",
+	"tags": ["English", "API"],
+	"image": "https://covidtracking.com/_assets/img/card.png"
+}
