@@ -16,7 +16,7 @@ body {
   body {
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 100px 1fr 30px;
+    grid-template-rows: 100px 1fr 5rem;
     grid-template-areas: "logo social" "nav main" "footer main";
   }
 }
@@ -36,8 +36,23 @@ body {
 
 .footer {
   grid-area: footer;
+  font-size: smaller;
+  padding: 0.5rem 30px;
+}
+.footer span {
+  white-space: nowrap;
 }
 
+@media (max-width: 50em) {
+  .footer {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 50em) {
+  h1 {
+    margin-top: 0.5rem;
+  }
+}
 .logo {
   background-color: #f8f5f2;
   display: flex;
@@ -53,14 +68,19 @@ body {
 .nav {
   background-color: #f8f5f2;
   color: #2d334a;
+  padding: 1rem 0;
 }
 .nav ol {
   list-style: none;
+  margin: 0;
   padding-left: 1ch;
+}
+.nav li {
+  display: inline;
 }
 .nav li a {
   color: #2d334a;
-  display: block;
+  display: inline-block;
   margin: 0.2em 1ch;
   padding: 0.2em 0.5ch;
   text-decoration: none;
@@ -76,6 +96,14 @@ body {
   color: #272343;
 }
 
+@media (min-width: 50em) {
+  .nav li {
+    display: block;
+  }
+  .nav li a {
+    display: block;
+  }
+}
 .footer {
   background-color: #f8f5f2;
   color: #2d334a;

@@ -1,24 +1,35 @@
 .nav
 	background-color: $color-secondary
 	color: $color-paragraph
+	padding: 1rem 0
 
 	ol
 		list-style: none
+		margin: 0
 		padding-left: 1ch
-	li a
-		color: $color-paragraph
-		display: block
-		margin: 0.2em 1ch
-		padding: 0.2em 0.5ch
-		text-decoration: none
-		&:hover
-			color: $color-stroke
-			text-decoration: underline
-		&.active
-			background-color: $color-main
-			border: 1px #eee solid
-			border-radius: 10px
-			color: $color-stroke
+	li
+		display: inline
+		a
+			color: $color-paragraph
+			display: inline-block
+			margin: 0.2em 1ch
+			padding: 0.2em 0.5ch
+			text-decoration: none
+			&:hover
+				color: $color-stroke
+				text-decoration: underline
+			&.active
+				background-color: $color-main
+				border: 1px #eee solid
+				border-radius: 10px
+				color: $color-stroke
+
+@media (min-width: 50em)
+	.nav
+		li
+			display: block
+			a
+				display: block
 
 .footer
 	background-color: $color-secondary
